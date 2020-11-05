@@ -3,7 +3,6 @@ package com.samoylenko.kt12
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.samoylenko.kt12.databinding.ActivityMainBinding
-import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,10 +32,10 @@ class MainActivity : AppCompatActivity() {
             countLike.text = Calc.intToText(post.like)
             countShare.text = post.sharing.toString()
             if (post.likedByMe){
-                like?.setImageResource(R.drawable.ic_liked_24)
+                like.setImageResource(R.drawable.ic_liked_24)
             }
 
-            like?.setOnClickListener {
+            like.setOnClickListener {
                 post.likedByMe = !post.likedByMe
                 like.setImageResource(
                     if (post.likedByMe) {
@@ -50,9 +49,7 @@ class MainActivity : AppCompatActivity() {
                 countLike.text = Calc.intToText(post.like)
             }
 
-
-
-            share?.setOnClickListener {
+            share.setOnClickListener {
                 post.sharing ++
                 countShare.text = post.sharing.toString()
             }
