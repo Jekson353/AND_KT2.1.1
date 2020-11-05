@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         with(binding){
             countView.text = post.countVisability.toString()
+
             author.text = post.author
             txtDate.text = post.published
             textData.text = post.content
@@ -48,6 +49,8 @@ class MainActivity : AppCompatActivity() {
                 )
                 countLike.text = Calc.intToText(post.like)
             }
+
+
 
             share?.setOnClickListener {
                 post.sharing ++
